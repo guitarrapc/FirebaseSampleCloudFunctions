@@ -1,0 +1,25 @@
+{
+    "name": "functions",
+    "version": "0.0.0",
+    "description": "cloud functions for twitter authorize",
+    "main": "index.js",
+    "scripts": {
+      "serve": "firebase serve --only functions",
+      "shell": "firebase experimental:functions:shell",
+      "start": "npm run shell",
+      "logs": "firebase functions:log",
+      "build": "tsc",
+      "watch": "tsc --watch",
+      "deploy": "tsc && firebase deploy --only functions"
+    },
+    "author": "guitarrapc",
+    "license": "",
+    "dependencies": {
+      "firebase-admin": "^4.2.0",
+      "firebase-functions": "^0.5.4",
+      "lodash": "^4.17.4"
+    },
+    "devDependencies": {
+      "typescript": "^2.2.2"
+    }
+  }
