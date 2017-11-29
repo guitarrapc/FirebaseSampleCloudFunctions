@@ -10,26 +10,20 @@ Step to Start
 ----
 
 1. initialize firebase project
+    - `firebase init`
 
-```
-firebase init
-```
-
-2. move to `functions` directory.
+1. move to `functions` directory.
     - `functions` directory will be created by firebase init.
 
-3. create `function/src` directory and move `functions/index.js` to `functions/src/index.ts` as for TypeScript.
+1. create `function/src` directory and move `functions/index.js` to `functions/src/index.ts` as for TypeScript.
 
-4. add `functions/package.json` file.
-5. install dependencies with `yarn` or `npm`. I recommend use yarn.
+1. add `functions/package.json` file.
+1. install dependencies with `yarn` or `npm`. I recommend use yarn.
+    - `yarn install`
 
-```
-yarn install
-```
+1. create a `tsconfig.json`.
 
-6. create a `tsconfig.json`.
-
-```json
+```tsconfig.json
 {
 	"compilerOptions": {
 	  "lib": ["es6", "es2015.promise"],
@@ -57,23 +51,22 @@ Login to GCP Project
 ----
 
 if needed, run following.
-
-`
+```
 firebase login
-`
+```
 
 > Specify GCP Project-Id at `.firebaserc`
 
 Build
 ----
 
-`
+```
 npm run build
-`
+```
 
 Deploy
 ----
 
-`
+```
 firebase deploy --only functions
-`
+```
