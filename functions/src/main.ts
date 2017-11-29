@@ -1,4 +1,7 @@
 import * as functions from 'firebase-functions'
 import {initializeApp} from 'firebase-admin'
-initializeApp(functions.config().firebase)
+var fb = functions.config().firebase
+if (fb) {
+    initializeApp(fb)
+}
 export * from 'firebase-functions'
