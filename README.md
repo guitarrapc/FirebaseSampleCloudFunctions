@@ -2,7 +2,7 @@ Before hand
 ----
 
 ```
-npm install -g firebase-functions
+npm install -g firebase-tools
 npm instakk -g yarn
 ```
 
