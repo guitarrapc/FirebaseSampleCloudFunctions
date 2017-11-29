@@ -1,5 +1,5 @@
 {
-    "name": "functions",
+    "name": "function",
     "version": "0.0.0",
     "description": "cloud functions for twitter authorize",
     "main": "index.js",

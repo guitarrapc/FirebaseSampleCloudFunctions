@@ -47,6 +47,12 @@ Step to Start
 }
 ```
 
+Write your Function
+----
+
+
+
+
 Login to GCP Project
 ----
 
@@ -67,11 +73,20 @@ npm run build
 Deploy
 ----
 
+### Local Test
+
+
 ```
 npm run serve
 ```
 
-or 
+### Production Deploy by Firebase CLI
+
+```
+npm run deploy
+```
+
+or
 
 ```
 firebase deploy --only functions
