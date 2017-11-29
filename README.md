@@ -50,7 +50,11 @@ Step to Start
 Write your Function
 ----
 
+you can specify which is entry point .js of function with define in 3 way.
 
+1. index.js : export 1 or more function.
+1. app.js : export 1 or more functions with package.json file that contains `"main" : "app.js"`
+1. index.js : import one or more functions from goo.js file and then export one or more functions.
 
 
 Login to GCP Project
