@@ -68,5 +68,11 @@ Deploy
 ----
 
 ```
+npm run serve
+```
+
+or 
+
+```
 firebase deploy --only functions
 ```
