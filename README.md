@@ -1,5 +1,4 @@
-Description
-----
+# Description
 
 - use VSCode as an editor.
 - Use TypeScript for AltJS. DO NOT WRITE RAW JavaScript at all.
@@ -7,8 +6,7 @@ Description
 - Deploy via firebse tools.
 - use latest version package if available. Especially if you use firestore packages for "firebase-admin": "^5.0.0", "firebase-functions": "^0.7.0" or higher is required.
 
-Before hand
-----
+## Before hand
 
 Prepare tools and yarn.
 
@@ -17,14 +15,12 @@ npm install -g firebase-tools
 npm instakk -g yarn
 ```
 
-Style Guide
-----
+## Style Guide
 
 > - [TypeScript : Coding guidelines](https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines)
 > - [TypeScript StyleGuide and Coding Conversions](https://github.com/basarat/typescript-book/blob/master/docs/styleguide/styleguide.md)
 
-Step to Start
-----
+## Step to Start
 
 1. initialize firebase project
     - `firebase init`
@@ -75,25 +71,25 @@ Step to Start
 
 ```tsconfig.json
 {
-	"compilerOptions": {
-	  "lib": ["es6", "es2015.promise"],
-	  "module": "commonjs",
-	  "outDir": "./",
-	  "noImplicitAny": false,
-	  "strictNullChecks": true,
-		"sourceMap": true,
-		"target": "es5",
-		"typeRoots": [
-			"node_modules/@types"
-		]
-	},
-	"include": [
-		"src/**/*.ts",
-		"spec/**/*.ts"
-	],
-	"exclude": [
-		"node_modeles"
-	]
+  "compilerOptions": {
+    "lib": ["es6", "es2015.promise"],
+    "module": "commonjs",
+    "outDir": "./",
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "sourceMap": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "spec/**/*.ts"
+  ],
+  "exclude": [
+    "node_modeles"
+  ]
 }
 ```
 
@@ -105,8 +101,7 @@ Step to Start
 }
 ```
 
-Write your Function
-----
+## Write your Function
 
 you can specify which is entry point .js of function with define in 3 way.
 
@@ -126,60 +121,55 @@ these .ts files should be under `functions/src` directory.
 1. store.ts : this handles firestore reference to be used in each function.
 1. ****.ts : each functions. you will load index.ts and (db.ts | store.ts) for package reference. Make sure return promise.
 
-Login to GCP Project
-----
+## Login to GCP Project
 
 if needed, run following.
-```
+
+```bash
 firebase login
 ```
 
 > Specify GCP Project-Id at `.firebaserc`
 
-
 ```.firebaserc
 {
   "projects": {
-    "default": "fir-sample-15558"
+    "default": "fir-sample-12345"
   }
 }
 ```
 
-Build
-----
+## Build
 
 this is required to transcompile .ts to .js using tsc.
 
-```
+```bash
 npm run build
 ```
 
-Local Serve
-----
+## Local Serve
 
 
-```
+```bash
 npm run serve
 ```
 
-Deploy
-----
+## Deploy
 
 ### deploy all functions
 
-```
+```bash
 npm run deploy
 ```
 
 or
 
-```
+```bash
 firebase deploy --only functions
 ```
 
 ### deploy specific function
 
-```
+```bash
 firebase deploy --only functions:functionName
 ```
-
