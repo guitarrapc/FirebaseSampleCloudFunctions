@@ -10,7 +10,7 @@ export const addMessageStore = functions.https.onRequest((req, res) => {
   var data = {
     "original" : original
   }
-  store.collection('messages').add(data).then(() => {
-    res.send(original)
+  store.collection('messages').add(data).then(writeResult => {
+    res.json({resule : `Message with ID: ${writeResult.id} added.`})
   })
 });
