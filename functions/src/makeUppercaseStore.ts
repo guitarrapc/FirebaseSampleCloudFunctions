@@ -5,9 +5,9 @@ import { DocumentData } from '@google-cloud/firestore';
 // Listens for new messages added to /messages/:pushId/original and creates an
 // uppercase version of the message to /messages/:pushId/uppercase
 export const makeUppercaseStore = functions.firestore.document('/messages/{documentId}')
-.onCreate(event => {
-  if (event === undefined) return;
-  if (event.params === undefined) return;
+.onCreate(async event => {
+  if (event == undefined) return;
+  if (event.params == undefined) return;
 
   // Grab the current value of what was written to the Realtime Database.
   const original = event.data.data().original;
@@ -17,5 +17,5 @@ export const makeUppercaseStore = functions.firestore.document('/messages/{docum
   // You must return a Promise when performing asynchronous tasks inside a Functions such as
   // writing to the Firebase Realtime Database.
   // Setting an 'uppercase' sibling in the Realtime Database returns a Promise.
-  return event.data.ref.set({uppercase}, {merge: true});
+  await event.data.ref.set({uppercase}, {merge: true});
 });

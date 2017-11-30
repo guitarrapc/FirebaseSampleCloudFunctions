@@ -3,7 +3,7 @@ import * as functions from './main'
 // Listens for new messages added to /messages/:pushId/original and creates an
 // uppercase version of the message to /messages/:pushId/uppercase
 export const makeUppercase = functions.database.ref('/messages/{pushId}/original')
-.onWrite(event => {
+.onWrite(async event => {
   if (event == undefined) return;
   if (event.data == undefined) return;
   if (event.data.ref == undefined) return;
@@ -17,5 +17,5 @@ export const makeUppercase = functions.database.ref('/messages/{pushId}/original
   // You must return a Promise when performing asynchronous tasks inside a Functions such as
   // writing to the Firebase Realtime Database.
   // Setting an "uppercase" sibling in the Realtime Database returns a Promise.
-  return event.data.ref.parent.child('uppercase').set(uppercase);
+  await event.data.ref.parent.child('uppercase').set(uppercase);
 });
